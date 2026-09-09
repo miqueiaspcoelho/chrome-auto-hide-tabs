@@ -1,0 +1,295 @@
+#chrome-auto-hide-tabs-trigger {
+    all: initial !important;
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 8px !important;
+
+    display: none;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: auto !important;
+
+    background: transparent !important;
+}
+
+
+#chrome-auto-hide-tabs {
+    all: initial !important;
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 45px !important;
+
+    box-sizing: border-box !important;
+
+    background: #202124 !important;
+    color: #ffffff !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 5px 8px 0 8px !important;
+
+    z-index: 2147483646 !important;
+
+    transform: translateY(-100%) !important;
+
+    transition: transform 0.15s ease !important;
+
+    pointer-events: auto !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+}
+
+
+#chrome-auto-hide-tabs.visivel {
+    transform: translateY(0) !important;
+}
+
+
+/*
+ * Esconde visualmente a barra de rolagem horizontal.
+ * O scroll continua funcionando.
+ */
+#chrome-auto-hide-tabs::-webkit-scrollbar {
+    height: 0 !important;
+}
+
+
+/* =========================================================
+   ABA
+   ========================================================= */
+
+.chrome-auto-hide-tab {
+    all: initial !important;
+
+    width: 180px !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+
+    height: 36px !important;
+
+    margin-right: 4px !important;
+
+    padding: 0 8px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 7px !important;
+
+    flex-shrink: 0 !important;
+
+    border-radius: 8px 8px 0 0 !important;
+
+    background: #35363a !important;
+
+    color: #e8eaed !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+
+    cursor: pointer !important;
+
+    overflow: hidden !important;
+
+    user-select: none !important;
+}
+
+
+/* Hover da aba */
+
+.chrome-auto-hide-tab:hover {
+    background: #45464a !important;
+}
+
+
+/* Aba atualmente ativa */
+
+.chrome-auto-hide-tab.ativa {
+    background: #5f6368 !important;
+}
+
+
+/* =========================================================
+   FAVICON
+   ========================================================= */
+
+.chrome-auto-hide-tab-favicon {
+    all: initial !important;
+
+    display: block !important;
+
+    width: 16px !important;
+    height: 16px !important;
+
+    min-width: 16px !important;
+    min-height: 16px !important;
+
+    max-width: 16px !important;
+    max-height: 16px !important;
+
+    flex-shrink: 0 !important;
+
+    object-fit: contain !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.chrome-auto-hide-tab-title {
+    all: initial !important;
+
+    display: block !important;
+
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+
+    overflow: hidden !important;
+
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+
+    color: #e8eaed !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+
+    line-height: 16px !important;
+
+    cursor: pointer !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+   ========================================================= */
+
+.chrome-auto-hide-tab-close {
+    all: initial !important;
+
+    width: 20px !important;
+    height: 20px !important;
+
+    min-width: 20px !important;
+    min-height: 20px !important;
+
+    flex-shrink: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 50% !important;
+
+    color: #e8eaed !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+
+    cursor: pointer !important;
+
+    user-select: none !important;
+}
+
+
+.chrome-auto-hide-tab-close:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+
+/*
+ * Pequeno feedback visual ao clicar no X
+ */
+.chrome-auto-hide-tab-close:active {
+    background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.chrome-auto-hide-new-tab {
+    all: initial !important;
+
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 34px !important;
+
+    flex-shrink: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    margin-left: 2px !important;
+    margin-right: 8px !important;
+
+    border-radius: 8px !important;
+
+    color: #e8eaed !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 22px !important;
+    font-weight: normal !important;
+
+    cursor: pointer !important;
+
+    user-select: none !important;
+}
+
+.chrome-auto-hide-new-tab:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.chrome-auto-hide-new-tab:active {
+    background: rgba(255, 255, 255, 0.25) !important;
+}
+
+#chrome-auto-hide-tabs-list {
+    all: initial !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+
+    height: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    white-space: nowrap !important;
+}
+
+#chrome-auto-hide-tabs-list::-webkit-scrollbar {
+    height: 0 !important;
+}

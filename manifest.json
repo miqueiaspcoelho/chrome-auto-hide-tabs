@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name" : "Chrome Auto Hide Tabs",
+	"version": "1.0.0",
+	"description": "Exibe barra personalizada ao passo o mouse no topo da tela",
+	"permissions" : [
+		"tabs"
+	],
+	"background" : {
+		"service_worker" : "background.js"
+	},
+	"content_scripts":[
+		{
+			"matches":["<all_urls>"],
+			"js" : ["content.js"],
+			"css" : ["tabs-bar.css"],
+			"run_at" : "document_idle"
+		}
+	]
+}
