@@ -9,15 +9,18 @@
     width: 100vw !important;
     height: 8px !important;
 
-    display: none;
+    display: block !important;
 
     z-index: 2147483647 !important;
 
-    pointer-events: auto !important;
+    pointer-events: none !important;
 
     background: transparent !important;
 }
 
+#chrome-auto-hide-tabs-trigger.ativo {
+    pointer-events: auto !important;
+}
 
 #chrome-auto-hide-tabs {
     all: initial !important;

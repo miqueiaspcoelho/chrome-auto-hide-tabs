@@ -39,35 +39,82 @@ var fullscreenAtivo = false;
 // FULLSCREEN
 // ======================================================
 
-function detectarTelaCheia() {
+// function detectarTelaCheia() {
 
-    var larguraTela = screen.width;
-    var alturaTela = screen.height;
+//     var larguraTela = screen.width;
+//     var alturaTela = screen.height;
+
+//     var larguraJanela = window.innerWidth;
+//     var alturaJanela = window.innerHeight;
+
+//     var tolerancia = 10;
+
+//     var ocupaLargura =
+//         Math.abs(larguraJanela - larguraTela) <= tolerancia;
+
+//     var ocupaAltura =
+//         Math.abs(alturaJanela - alturaTela) <= tolerancia;
+
+//     fullscreenAtivo = ocupaLargura && ocupaAltura;
+
+//     if (fullscreenAtivo) {
+
+//         zona.style.display = 'block';
+
+//     } else {
+
+//         zona.style.display = 'none';
+
+//         barra.classList.remove('visivel');
+
+//     }
+// }
+function detectarTelaCheia() {
 
     var larguraJanela = window.innerWidth;
     var alturaJanela = window.innerHeight;
 
-    var tolerancia = 10;
+    var larguraTela = screen.width;
+    var alturaTela = screen.height;
 
-    var ocupaLargura =
-        Math.abs(larguraJanela - larguraTela) <= tolerancia;
+    var toleranciaAltura = 20;
+    var toleranciaLargura = 20;
+
+    var diferencaAltura = Math.abs(
+        alturaTela - alturaJanela
+    );
+
+    var diferencaLargura = Math.abs(
+        larguraTela - larguraJanela
+    );
 
     var ocupaAltura =
-        Math.abs(alturaJanela - alturaTela) <= tolerancia;
+        diferencaAltura <= toleranciaAltura;
 
-    fullscreenAtivo = ocupaLargura && ocupaAltura;
+    var ocupaLargura =
+        diferencaLargura <= toleranciaLargura;
+
+    fullscreenAtivo =
+        ocupaAltura &&
+        ocupaLargura;
+
+
+    // ==============================================
+    // ATIVA/DESATIVA A ZONA DE HOVER
+    // ==============================================
 
     if (fullscreenAtivo) {
 
-        zona.style.display = 'block';
+        zona.classList.add('ativo');
 
     } else {
 
-        zona.style.display = 'none';
+        zona.classList.remove('ativo');
 
         barra.classList.remove('visivel');
 
     }
+
 }
 
 
@@ -324,7 +371,25 @@ function criarNovaAba() {
 // EVENTOS
 // ======================================================
 
+// zona.addEventListener('mouseenter', function () {
+
+//     if (!fullscreenAtivo) {
+//         return;
+//     }
+
+//     if (timeoutEsconderBarra) {
+//         clearTimeout(timeoutEsconderBarra);
+//         timeoutEsconderBarra = null;
+//     }
+
+//     carregarAbas();
+
+//     barra.classList.add('visivel');
+
+// });
 zona.addEventListener('mouseenter', function () {
+
+    detectarTelaCheia();
 
     if (!fullscreenAtivo) {
         return;
@@ -346,7 +411,7 @@ barra.addEventListener('mouseleave', function () {
 
     timeoutEsconderBarra = setTimeout(function(){
         barra.classList.remove("visivel");
-    }, 300 );
+    }, 1200 );
 
     barra.classList.remove('visivel');
 
