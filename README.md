@@ -1,1 +1,2 @@
 # chrome-auto-hide-tabs
+ 
